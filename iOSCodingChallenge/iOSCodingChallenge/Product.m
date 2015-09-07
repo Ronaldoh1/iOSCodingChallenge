@@ -10,7 +10,10 @@
 
 @implementation Product
 
+/*Initialize each objects with the values obtained from each dictionary in our API Call. Convert each property of the product to its correct Datatype.
+ Assumptions:Allow to round up to neast hundredth.
 
+ */
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary{
 

@@ -14,17 +14,19 @@
 
 -(void)downloadItemsWithToMoApi:(NSString *)apiString{
 
-//1. Create a URL with API String provided.
+    //1. Create a URL with API String provided.
     NSURL *url = [NSURL URLWithString:apiString];
 
-//2. Create request.
+    //2. Create request.
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
-//3. Get items from ToMo Webservice.
+    //3. Get items from ToMo Webservice.
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
 
-//If the connection failed and then data will be nil. Need to check if data != nil and then process that data.
+        //If the connection failed and then data will be nil.
+        //Need to check if data != nil and then process that data.
+        //If there is an error with connections, present alert to user.
 
         if (data != nil) {
 
@@ -61,6 +63,8 @@
 
 }
 
+
+//Helper Methods to display alert to user.
 
 -(void)displayAlertMessage:(NSString *)title andWith:(NSString *)message{
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title

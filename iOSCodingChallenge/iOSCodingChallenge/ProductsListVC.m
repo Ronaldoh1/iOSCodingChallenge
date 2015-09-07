@@ -27,7 +27,7 @@ static NSString *const cellIdentifier = @"itemCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     //fetch json products and refresh view
 
     //allocate and initialie dictionary to hold the ToMo Items
@@ -50,14 +50,13 @@ static NSString *const cellIdentifier = @"itemCell";
     [super didReceiveMemoryWarning];
 }
 
-//Got an arrray of dictionaries. Need to convert to Array of Products 
+//Got an arrray of dictionaries. Need to convert to Array of Products
+//Sort the array.
 
 -(void)gotToMoProducts:(NSArray *)array{
 
-    //NSLog(@"%@ this is ittttttttttttttttt", itemArray);
 
     for(NSDictionary *dict in array){
-        NSLog(@"%@ hii", dict);
 
         Product *product = [[Product alloc]initWithDictionary:dict];
 
@@ -68,7 +67,7 @@ static NSString *const cellIdentifier = @"itemCell";
     //sort the array
     NSSortDescriptor *sortDescriptor;
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"price"
-                                                  ascending:YES];
+                                                 ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     NSArray *sortedArray;
 
@@ -77,9 +76,6 @@ static NSString *const cellIdentifier = @"itemCell";
     self.sortedProductsArray = [NSMutableArray arrayWithArray:sortedArray.copy];
 
     [self.tableView reloadData];
-
-
-
 
 }
 
@@ -96,7 +92,7 @@ static NSString *const cellIdentifier = @"itemCell";
 }
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 
-     [[UILabel appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setTextAlignment:NSTextAlignmentCenter];
+    [[UILabel appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setTextAlignment:NSTextAlignmentCenter];
 
     return @"TODAY'S SALES";
 }
@@ -115,38 +111,38 @@ static NSString *const cellIdentifier = @"itemCell";
     //get the Image from URL
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-                       ^{
+                   ^{
 
-                           NSURL *imageURL = [NSURL URLWithString:product.imageURL];
-                           NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                       NSURL *imageURL = [NSURL URLWithString:product.imageURL];
+                       NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
 
-                           //Set the image for each cell on the main thread.
-                           dispatch_sync(dispatch_get_main_queue(), ^{
-
-
-                               if (imageData != nil) {
-
-                                   cell.productImage.alpha = 0.0;
-
-                                   [UIView animateWithDuration:1.0
-                                                    animations:^{
-                                                        cell.productImage.alpha = 1.0;
-
-                                cell.productImage.image = [UIImage imageWithData:imageData];
-                                    }];
-                               }else{
-
-                                   [cell.productImage setBackgroundColor:[UIColor redColor]];
-                               }
+                       //Set the image for each cell on the main thread.
+                       dispatch_sync(dispatch_get_main_queue(), ^{
 
 
+                           if (imageData != nil) {
+
+                               cell.productImage.alpha = 0.0;
+
+                               [UIView animateWithDuration:1.0
+                                                animations:^{
+                                                    cell.productImage.alpha = 1.0;
+
+                                                    cell.productImage.image = [UIImage imageWithData:imageData];
+                                                }];
+                           }else{
+
+                               [cell.productImage setBackgroundColor:[UIColor redColor]];
+                           }
 
 
-                           });
+
+
                        });
+                   });
 
 
-    
+
     cell.productNameAndPrice.text = [NSString stringWithFormat:@"$%@ \n%@", product.price, product.productName];
 
     cell.productDescription.text = product.productDescription;
@@ -154,6 +150,23 @@ static NSString *const cellIdentifier = @"itemCell";
 
     return cell;
 
+}
+
+//Overide commitEditingStyle Delegate method to delete Product at indexPath. This will allow the user to swipe left and for the delete option to appear. We need to handle the delete editing style.
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //Need to look up the product that is associated with this indexPath
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [self.sortedProductsArray removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        
+        
+    }
+    
+    
 }
 
 

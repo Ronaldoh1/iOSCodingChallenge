@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				F2BBF64D1B9D77C80010CB6D /* Data */,
-				F2BBF64E1B9D77E30010CB6D /* Items List */,
+				F2BBF64E1B9D77E30010CB6D /* Product List */,
 				C32F0F6F1AFA987A00F9B22E /* AppDelegate.h */,
 				C32F0F701AFA987A00F9B22E /* AppDelegate.m */,
 				C32F0F781AFA987A00F9B22E /* Images.xcassets */,
@@ -136,7 +136,7 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		F2BBF64E1B9D77E30010CB6D /* Items List */ = {
+		F2BBF64E1B9D77E30010CB6D /* Product List */ = {
 			isa = PBXGroup;
 			children = (
 				C32F0F751AFA987A00F9B22E /* Main.storyboard */,
@@ -147,7 +147,7 @@
 				C32F0F721AFA987A00F9B22E /* ProductsListVC.h */,
 				C32F0F731AFA987A00F9B22E /* ProductsListVC.m */,
 			);
-			name = "Items List";
+			name = "Product List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
