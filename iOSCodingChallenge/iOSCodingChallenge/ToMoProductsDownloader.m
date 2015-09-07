@@ -31,6 +31,11 @@
 
             [self processData:data];
 
+        }else{
+
+            [self displayAlertMessage:@"Connection Error!" andWith:connectionError.localizedDescription];
+
+
         }
 
     }];
@@ -41,13 +46,10 @@
 -(void)processData:(NSData *)data{
 
     //Need to store all of the items in an arary.
-    //We get back a dictionary of dictionary.
-    //
+    //We get back a dictionary of dictionary
     NSDictionary *itemsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
 
     NSMutableArray *tempProductsArray = [NSMutableArray new];
-//
-//    NSLog(@"%@", itemsDictionary);
 
     for (NSDictionary *ProductDict in itemsDictionary) {
 
@@ -55,10 +57,18 @@
 
     }
 
-    //NSLog(@"%@", tempProductsArray);
-
     [self.parentVC gotToMoProducts:tempProductsArray];
 
+}
+
+
+-(void)displayAlertMessage:(NSString *)title andWith:(NSString *)message{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title
+                                                   message:message
+                                                  delegate:self
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 @end

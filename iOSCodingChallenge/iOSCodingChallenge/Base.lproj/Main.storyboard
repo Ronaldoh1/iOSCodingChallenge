@@ -29,10 +29,9 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ya0-GM-4oK">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="207"/>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ewe-H4-ZdS">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewe-H4-ZdS">
                                                     <rect key="frame" x="0.0" y="201" width="320" height="46"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -70,7 +69,6 @@
                                             <outlet property="productDescription" destination="Ewe-H4-ZdS" id="W6l-r3-uZo"/>
                                             <outlet property="productImage" destination="ya0-GM-4oK" id="esA-QD-bXq"/>
                                             <outlet property="productNameAndPrice" destination="S10-Vw-C4o" id="4to-Oi-Loh"/>
-                                            <segue destination="DC0-Xc-iwX" kind="show" id="21G-VK-7i1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -97,25 +95,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="961" y="325"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="FYq-Ys-tqN">
-            <objects>
-                <viewController id="DC0-Xc-iwX" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="slo-7Q-ntY"/>
-                        <viewControllerLayoutGuide type="bottom" id="KT2-oS-pAE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="905-Z8-X8Q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nSp-RM-GMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1331" y="333"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CvK-zJ-XXU">

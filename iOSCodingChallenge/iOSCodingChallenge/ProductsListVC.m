@@ -94,15 +94,17 @@ static NSString *const cellIdentifier = @"itemCell";
 
     return [self.sortedProductsArray count];
 }
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+
+     [[UILabel appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setTextAlignment:NSTextAlignmentCenter];
+
+    return @"TODAY'S SALES";
+}
 
 -(productCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     //initialize the cell.
     productCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-
-
-
-
 
     //create a temp product object
     Product *product = [Product new];
@@ -148,9 +150,6 @@ static NSString *const cellIdentifier = @"itemCell";
     cell.productNameAndPrice.text = [NSString stringWithFormat:@"$%@ \n%@", product.price, product.productName];
 
     cell.productDescription.text = product.productDescription;
-
-    
-
 
 
     return cell;
