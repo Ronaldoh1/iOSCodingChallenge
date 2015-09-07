@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Touch of Modern. All rights reserved.
 //
 
-#import "ToMoItemsDownloader.h"
+#import "ToMoProductsDownloader.h"
 
-@implementation ToMoItemsDownloader
+@implementation ToMoProductsDownloader
 
 /* pull ToMo Items information and store them in an array and provide the ParentVC (ListVC) with items */
 
@@ -41,9 +41,23 @@
 -(void)processData:(NSData *)data{
 
     //Need to store all of the items in an arary.
+    //We get back a dictionary of dictionary.
+    //
     NSDictionary *itemsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
 
-    NSLog(@"%@", itemsDictionary);
+    NSMutableArray *tempProductsArray = [NSMutableArray new];
+//
+//    NSLog(@"%@", itemsDictionary);
+
+    for (NSDictionary *ProductDict in itemsDictionary) {
+
+        [tempProductsArray addObject:ProductDict];
+
+    }
+
+    //NSLog(@"%@", tempProductsArray);
+
+    [self.parentVC gotToMoProducts:tempProductsArray];
 
 }
 

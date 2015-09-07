@@ -10,11 +10,11 @@
 
 @protocol ToMoItemsDownloaderDelegate <NSObject>
 
--(void)gotToMoItems:(NSArray *)itemArray;
+-(void)gotToMoProducts:(NSArray *)array;
 
 @end
 
-@interface ToMoItemsDownloader : NSObject
+@interface ToMoProductsDownloader : NSObject
 
 @property id<ToMoItemsDownloaderDelegate>parentVC;
 

@@ -8,7 +8,7 @@
         <!--T-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ItemsListViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProductsListVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -44,6 +44,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="T" id="LMk-Q3-QNp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="UaA-XG-aKL" id="cii-Px-jEP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

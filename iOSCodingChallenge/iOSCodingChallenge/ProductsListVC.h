@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ItemsListViewController : UIViewController
+@interface ProductsListVC : UIViewController
 
 
 @end
