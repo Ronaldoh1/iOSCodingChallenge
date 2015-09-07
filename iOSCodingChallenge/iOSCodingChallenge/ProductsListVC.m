@@ -40,10 +40,6 @@ static NSString *const cellIdentifier = @"itemCell";
     [self.downloader downloadItemsWithToMoApi:iosCodingChallengeUrlString];
 
 
-    NSLog(@"%@ got ittt", self.productsArray);
-
-
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -121,15 +117,16 @@ static NSString *const cellIdentifier = @"itemCell";
 
 
                            if (imageData != nil) {
+                               cell.productImage.image = [UIImage imageWithData:imageData];
 
-                               cell.productImage.alpha = 0.0;
+                               //xcell.productImage.alpha = 0.0;
 
-                               [UIView animateWithDuration:1.0
-                                                animations:^{
-                                                    cell.productImage.alpha = 1.0;
-
-                                                    cell.productImage.image = [UIImage imageWithData:imageData];
-                                                }];
+//                               [UIView animateWithDuration:0.5
+//                                                animations:^{
+//                                                    cell.productImage.alpha = 1.0;
+//
+//
+//                                                }];
                            }else{
 
                                [cell.productImage setBackgroundColor:[UIColor redColor]];

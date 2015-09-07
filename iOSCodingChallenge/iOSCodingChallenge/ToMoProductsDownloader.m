@@ -18,7 +18,11 @@
     NSURL *url = [NSURL URLWithString:apiString];
 
     //2. Create request.
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+
+//    NSString *jsonString = @"{requestDate: '2015-09-07'}";
+//
+//    [request setHTTPBody:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
 
     //3. Get items from ToMo Webservice.
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
