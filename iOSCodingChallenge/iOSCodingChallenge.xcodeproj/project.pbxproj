@@ -144,8 +144,8 @@
 				F2BBF64A1B9D77BC0010CB6D /* ToMoItemsDownloader.h */,
 				F2BBF64F1B9D79EF0010CB6D /* ItemCustomCell.h */,
 				F2BBF6501B9D79EF0010CB6D /* ItemCustomCell.m */,
-				C32F0F731AFA987A00F9B22E /* ItemsListViewController.m */,
 				C32F0F721AFA987A00F9B22E /* ItemsListViewController.h */,
+				C32F0F731AFA987A00F9B22E /* ItemsListViewController.m */,
 			);
 			name = "Items List";
 			sourceTree = "<group>";

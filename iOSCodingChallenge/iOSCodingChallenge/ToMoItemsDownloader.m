@@ -43,6 +43,8 @@
     //Need to store all of the items in an arary.
     NSDictionary *itemsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
 
+    NSLog(@"%@", itemsDictionary);
+
 }
 
 @end

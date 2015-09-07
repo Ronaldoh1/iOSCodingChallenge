@@ -8,8 +8,9 @@
 
 #import "ItemsListViewController.h"
 #import "ToMoItemsDownloader.h"
+#import "ItemCustomCell.h"
 
-@interface ItemsListViewController ()<ToMoItemsDownloaderDelegate>
+@interface ItemsListViewController ()<ToMoItemsDownloaderDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property ToMoItemsDownloader *downloader;
 @property NSMutableArray *itemsArray;
@@ -19,6 +20,7 @@
 @implementation ItemsListViewController
 
 static NSString *const iosCodingChallengeUrlString = @"https://public.touchofmodern.com/ioschallenge.json";
+static NSString *const cellIdentifier = @"itemCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,10 +35,45 @@ static NSString *const iosCodingChallengeUrlString = @"https://public.touchofmod
     //allocate and initialie dictionary to hold the ToMo Items
 
 
+     NSLog(@"%@ yoooo ", self.itemsArray);
+
+
+
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+
+-(void)gotToMoItems:(NSArray *)itemArray{
+
+
+    self.itemsArray = [NSMutableArray arrayWithArray:itemArray];
+}
+
+#pragma mark - UITableView Delegate & Datasource Methods
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 3;
+}
+
+-(ItemCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    ItemCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+
+
+
+    return cell;
+
+
 }
 
 @end
