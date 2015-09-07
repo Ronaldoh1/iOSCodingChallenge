@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Product : NSObject
-@property NSString *itemDescription;
+@property NSString *productDescription;
 @property NSString *productName;
 @property NSDecimalNumber *price;
 @property NSString *imageURL;

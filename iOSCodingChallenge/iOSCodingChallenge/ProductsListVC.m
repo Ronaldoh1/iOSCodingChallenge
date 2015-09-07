@@ -8,13 +8,14 @@
 
 #import "ProductsListVC.h"
 #import "ToMoProductsDownloader.h"
-#import "ItemCustomCell.h"
+#import "productCustomCell.h"
 #import "Product.h"
 
 @interface ProductsListVC ()<ToMoItemsDownloaderDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property ToMoProductsDownloader *downloader;
 @property NSMutableArray *productsArray;
+@property NSMutableArray *sortedProductsArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -31,7 +32,7 @@ static NSString *const cellIdentifier = @"itemCell";
 
     //allocate and initialie dictionary to hold the ToMo Items
     self.productsArray = [NSMutableArray new];
-
+    self.sortedProductsArray = [NSMutableArray new];
 
 
     self.downloader = [ToMoProductsDownloader new];
@@ -56,12 +57,24 @@ static NSString *const cellIdentifier = @"itemCell";
     //NSLog(@"%@ this is ittttttttttttttttt", itemArray);
 
     for(NSDictionary *dict in array){
+        NSLog(@"%@ hii", dict);
 
         Product *product = [[Product alloc]initWithDictionary:dict];
 
         [self.productsArray addObject:product];
 
     }
+
+    //sort the array
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"price"
+                                                  ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray;
+
+    sortedArray = [self.productsArray sortedArrayUsingDescriptors:sortDescriptors];
+
+    self.sortedProductsArray = [NSMutableArray arrayWithArray:sortedArray.copy];
 
     [self.tableView reloadData];
 
@@ -79,18 +92,71 @@ static NSString *const cellIdentifier = @"itemCell";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return [self.productsArray count];
+    return [self.sortedProductsArray count];
 }
 
--(ItemCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(productCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    ItemCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    //initialize the cell.
+    productCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+
+
+
+
+
+    //create a temp product object
+    Product *product = [Product new];
+
+    //set temp product to product for product array at current indexPath.row
+    product = (Product *) self.sortedProductsArray[indexPath.row];
+
+    //get the Image from URL
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                       ^{
+
+                           NSURL *imageURL = [NSURL URLWithString:product.imageURL];
+                           NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+
+                           //Set the image for each cell on the main thread.
+                           dispatch_sync(dispatch_get_main_queue(), ^{
+
+
+                               if (imageData != nil) {
+
+                                   cell.productImage.alpha = 0.0;
+
+                                   [UIView animateWithDuration:1.0
+                                                    animations:^{
+                                                        cell.productImage.alpha = 1.0;
+
+                                cell.productImage.image = [UIImage imageWithData:imageData];
+                                    }];
+                               }else{
+
+                                   [cell.productImage setBackgroundColor:[UIColor redColor]];
+                               }
+
+
+
+
+                           });
+                       });
+
+
+    
+    cell.productNameAndPrice.text = [NSString stringWithFormat:@"$%@ \n%@", product.price, product.productName];
+
+    cell.productDescription.text = product.productDescription;
+
+    
 
 
 
     return cell;
 
-
 }
+
+
 
 @end

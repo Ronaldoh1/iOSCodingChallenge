@@ -6,12 +6,13 @@
 //  Copyright (c) 2015 Touch of Modern. All rights reserved.
 //
 
-#import "ItemCustomCell.h"
+#import "productCustomCell.h"
 
-@implementation ItemCustomCell
+@implementation productCustomCell
 
 - (void)awakeFromNib {
     // Initialization code
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
