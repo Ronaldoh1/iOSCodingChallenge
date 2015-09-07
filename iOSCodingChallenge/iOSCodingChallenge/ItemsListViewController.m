@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Touch of Modern. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ItemsListViewController.h"
 
-@interface ViewController ()
+@interface ItemsListViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ItemsListViewController
 
 static NSString *const iosCodingChallengeUrlString = @"https://public.touchofmodern.com/ioschallenge.json";
 

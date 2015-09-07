@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		C32F0F6E1AFA987A00F9B22E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F0F6D1AFA987A00F9B22E /* main.m */; };
 		C32F0F711AFA987A00F9B22E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F0F701AFA987A00F9B22E /* AppDelegate.m */; };
-		C32F0F741AFA987A00F9B22E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F0F731AFA987A00F9B22E /* ViewController.m */; };
+		C32F0F741AFA987A00F9B22E /* ItemsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F0F731AFA987A00F9B22E /* ItemsListViewController.m */; };
 		C32F0F771AFA987A00F9B22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32F0F751AFA987A00F9B22E /* Main.storyboard */; };
 		C32F0F791AFA987A00F9B22E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32F0F781AFA987A00F9B22E /* Images.xcassets */; };
 		C32F0F7C1AFA987A00F9B22E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32F0F7A1AFA987A00F9B22E /* LaunchScreen.xib */; };
 		C32F0F881AFA987A00F9B22E /* iOSCodingChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F0F871AFA987A00F9B22E /* iOSCodingChallengeTests.m */; };
+		F2BBF64C1B9D77BC0010CB6D /* ToMoItemsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBF64B1B9D77BC0010CB6D /* ToMoItemsDownloader.m */; };
+		F2BBF6511B9D79EF0010CB6D /* ItemCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBF6501B9D79EF0010CB6D /* ItemCustomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		C32F0F6D1AFA987A00F9B22E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C32F0F6F1AFA987A00F9B22E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C32F0F701AFA987A00F9B22E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C32F0F721AFA987A00F9B22E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C32F0F731AFA987A00F9B22E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C32F0F721AFA987A00F9B22E /* ItemsListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsListViewController.h; sourceTree = "<group>"; };
+		C32F0F731AFA987A00F9B22E /* ItemsListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemsListViewController.m; sourceTree = "<group>"; };
 		C32F0F761AFA987A00F9B22E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C32F0F781AFA987A00F9B22E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C32F0F7B1AFA987A00F9B22E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C32F0F811AFA987A00F9B22E /* iOSCodingChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCodingChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32F0F861AFA987A00F9B22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C32F0F871AFA987A00F9B22E /* iOSCodingChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSCodingChallengeTests.m; sourceTree = "<group>"; };
+		F2BBF64A1B9D77BC0010CB6D /* ToMoItemsDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToMoItemsDownloader.h; sourceTree = "<group>"; };
+		F2BBF64B1B9D77BC0010CB6D /* ToMoItemsDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToMoItemsDownloader.m; sourceTree = "<group>"; };
+		F2BBF64F1B9D79EF0010CB6D /* ItemCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCustomCell.h; sourceTree = "<group>"; };
+		F2BBF6501B9D79EF0010CB6D /* ItemCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCustomCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +87,10 @@
 		C32F0F6A1AFA987A00F9B22E /* iOSCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				F2BBF64D1B9D77C80010CB6D /* Data */,
+				F2BBF64E1B9D77E30010CB6D /* Items List */,
 				C32F0F6F1AFA987A00F9B22E /* AppDelegate.h */,
 				C32F0F701AFA987A00F9B22E /* AppDelegate.m */,
-				C32F0F721AFA987A00F9B22E /* ViewController.h */,
-				C32F0F731AFA987A00F9B22E /* ViewController.m */,
-				C32F0F751AFA987A00F9B22E /* Main.storyboard */,
 				C32F0F781AFA987A00F9B22E /* Images.xcassets */,
 				C32F0F7A1AFA987A00F9B22E /* LaunchScreen.xib */,
 				C32F0F6B1AFA987A00F9B22E /* Supporting Files */,
@@ -117,6 +122,27 @@
 				C32F0F861AFA987A00F9B22E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F2BBF64D1B9D77C80010CB6D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F2BBF64B1B9D77BC0010CB6D /* ToMoItemsDownloader.m */,
+				F2BBF64A1B9D77BC0010CB6D /* ToMoItemsDownloader.h */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		F2BBF64E1B9D77E30010CB6D /* Items List */ = {
+			isa = PBXGroup;
+			children = (
+				C32F0F751AFA987A00F9B22E /* Main.storyboard */,
+				F2BBF64F1B9D79EF0010CB6D /* ItemCustomCell.h */,
+				F2BBF6501B9D79EF0010CB6D /* ItemCustomCell.m */,
+				C32F0F731AFA987A00F9B22E /* ItemsListViewController.m */,
+				C32F0F721AFA987A00F9B22E /* ItemsListViewController.h */,
+			);
+			name = "Items List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C32F0F741AFA987A00F9B22E /* ViewController.m in Sources */,
+				F2BBF64C1B9D77BC0010CB6D /* ToMoItemsDownloader.m in Sources */,
+				F2BBF6511B9D79EF0010CB6D /* ItemCustomCell.m in Sources */,
+				C32F0F741AFA987A00F9B22E /* ItemsListViewController.m in Sources */,
 				C32F0F711AFA987A00F9B22E /* AppDelegate.m in Sources */,
 				C32F0F6E1AFA987A00F9B22E /* main.m in Sources */,
 			);
@@ -418,6 +446,7 @@
 				C32F0F8D1AFA987A00F9B22E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C32F0F8E1AFA987A00F9B22E /* Build configuration list for PBXNativeTarget "iOSCodingChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +455,7 @@
 				C32F0F901AFA987A00F9B22E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
