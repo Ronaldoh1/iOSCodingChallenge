@@ -18,7 +18,7 @@
 
 @property id<ToMoItemsDownloaderDelegate>parentVC;
 
--(void)downloadItemsFromToMoAPI;
+-(void)downloadItemsWithToMoApi:(NSString *)apiString;
 
 
 @end
