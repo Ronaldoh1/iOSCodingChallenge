@@ -28,7 +28,17 @@ static NSString *const cellIdentifier = @"itemCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    //fetch json products and refresh view
+    //Change color of navigation view controller
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+
+    // hange the Nav Title and set it to white.
+    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
+    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+    titleView.font = [UIFont fontWithName:@"Helvetica Bold" size:22];
+    titleView.text = @"T";
+    titleView.textAlignment = NSTextAlignmentCenter;
+    titleView.textColor = [UIColor whiteColor];
+    [self.navigationItem setTitleView:titleView];
 
     //allocate and initialie dictionary to hold the ToMo Items
     self.productsArray = [NSMutableArray new];
