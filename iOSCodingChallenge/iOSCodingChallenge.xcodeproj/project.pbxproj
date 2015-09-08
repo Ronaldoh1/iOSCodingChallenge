@@ -132,6 +132,8 @@
 			children = (
 				F2BBF6531B9D7D6E0010CB6D /* Product.h */,
 				F2BBF6541B9D7D6E0010CB6D /* Product.m */,
+				F2BBF64B1B9D77BC0010CB6D /* ToMoProductsDownloader.m */,
+				F2BBF64A1B9D77BC0010CB6D /* ToMoProductsDownloader.h */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -140,8 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				C32F0F751AFA987A00F9B22E /* Main.storyboard */,
-				F2BBF64B1B9D77BC0010CB6D /* ToMoProductsDownloader.m */,
-				F2BBF64A1B9D77BC0010CB6D /* ToMoProductsDownloader.h */,
 				F2BBF64F1B9D79EF0010CB6D /* productCustomCell.h */,
 				F2BBF6501B9D79EF0010CB6D /* productCustomCell.m */,
 				C32F0F721AFA987A00F9B22E /* ProductsListVC.h */,

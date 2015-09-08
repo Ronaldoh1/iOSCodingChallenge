@@ -96,7 +96,7 @@ static NSString *const cellIdentifier = @"itemCell";
 -(productCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     //initialize the cell.
-    productCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    productCustomCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 
     //create a temp product object
     Product *product = [Product new];
@@ -117,16 +117,18 @@ static NSString *const cellIdentifier = @"itemCell";
 
 
                            if (imageData != nil) {
-                               cell.productImage.image = [UIImage imageWithData:imageData];
 
-                               //xcell.productImage.alpha = 0.0;
 
-//                               [UIView animateWithDuration:0.5
-//                                                animations:^{
-//                                                    cell.productImage.alpha = 1.0;
-//
-//
-//                                                }];
+                               cell.productImage.alpha = 0.0;
+
+                               [UIView animateWithDuration:0.5
+                                                animations:^{
+                                                    cell.productImage.alpha = 1.0;
+
+
+                            cell.productImage.image = [UIImage imageWithData:imageData];
+
+                                                }];
                            }else{
 
                                [cell.productImage setBackgroundColor:[UIColor redColor]];
@@ -143,7 +145,6 @@ static NSString *const cellIdentifier = @"itemCell";
     cell.productNameAndPrice.text = [NSString stringWithFormat:@"$%@ \n%@", product.price, product.productName];
 
     cell.productDescription.text = product.productDescription;
-
 
     return cell;
 
