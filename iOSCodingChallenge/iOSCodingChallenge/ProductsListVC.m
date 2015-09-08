@@ -100,6 +100,8 @@ static NSString *const cellIdentifier = @"itemCell";
 
     [[UILabel appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setTextAlignment:NSTextAlignmentCenter];
 
+
+
     return @"TODAY'S SALES";
 }
 
