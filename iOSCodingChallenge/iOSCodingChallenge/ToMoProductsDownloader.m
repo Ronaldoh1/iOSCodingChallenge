@@ -20,7 +20,15 @@
     //2. Create request.
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 
-//    NSString *jsonString = @"{requestDate: '2015-09-07'}";
+//    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+//    [dateFormat setDateFormat:@"dd-MM-YYYY"];
+//
+//
+//    NSDate *date = [NSDate date];
+//
+//    NSString *todaysDate = [dateFormat stringFromDate:date];
+//
+//    NSString *jsonString = [NSString stringWithFormat:@"{requestDate: '%@'}", todaysDate];
 //
 //    [request setHTTPBody:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
 

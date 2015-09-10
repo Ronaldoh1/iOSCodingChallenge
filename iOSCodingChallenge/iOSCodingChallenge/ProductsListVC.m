@@ -10,7 +10,7 @@
 #import "ToMoProductsDownloader.h"
 #import "productCustomCell.h"
 #import "Product.h"
-
+#import "DetailVC.h"
 @interface ProductsListVC ()<ToMoItemsDownloaderDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property ToMoProductsDownloader *downloader;
@@ -50,10 +50,6 @@ static NSString *const cellIdentifier = @"itemCell";
     [self.downloader downloadItemsWithToMoApi:iosCodingChallengeUrlString];
 
 
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 //Got an arrray of dictionaries. Need to convert to Array of Products
@@ -179,6 +175,18 @@ static NSString *const cellIdentifier = @"itemCell";
     
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
+    DetailVC *destVC = segue.destinationViewController;
+
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+
+
+    if ([segue.identifier isEqualToString:@"seeProductDetail"]) {
+        
+      destVC.product = (Product *)self.sortedProductsArray[indexPath.row];
+    }
+
+}
 
 @end
